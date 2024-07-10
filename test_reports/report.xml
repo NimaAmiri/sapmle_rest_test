@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+	<testsuite name="IntegrationTest-20240709150928" tests="1" file=".py" time="0.257" timestamp="2024-07-09T15:09:29" failures="1" errors="0" skipped="0">
+		<testcase classname="IntegrationTest" name="test_hinzufuegen_loeschen_herunterladen_gpids" time="0.257" timestamp="2024-07-09T15:09:29" file="IntegrationTest.py" line="12">
+			<failure type="AssertionError" message="Lists differ: ['GPID 2', 'GPID 3', 'GPID 4', 'GPID 6', 'GPID 7'] != ['GPID 2', 'GPID 3', 'GPID 5', 'GPID 6']
+
+First differing element 2:
+'GPID 4'
+'GPID 5'
+
+First list contains 1 additional elements.
+First extra element 4:
+'GPID 7'
+
+- ['GPID 2', 'GPID 3', 'GPID 4', 'GPID 6', 'GPID 7']
+?                            ^           ----------
+
++ ['GPID 2', 'GPID 3', 'GPID 5', 'GPID 6']
+?                            ^
+"><![CDATA[Traceback (most recent call last):
+  File "c:\Users\Nima Amiri\Documents\Flask\rest_api_testing\IntegrationTest.py", line 32, in test_hinzufuegen_loeschen_herunterladen_gpids
+    self.assertListEqual(['GPID 2', 'GPID 3', 'GPID 4', 'GPID 6', 'GPID 7'], df.gpid.values.tolist())
+AssertionError: Lists differ: ['GPID 2', 'GPID 3', 'GPID 4', 'GPID 6', 'GPID 7'] != ['GPID 2', 'GPID 3', 'GPID 5', 'GPID 6']
+
+First differing element 2:
+'GPID 4'
+'GPID 5'
+
+First list contains 1 additional elements.
+First extra element 4:
+'GPID 7'
+
+- ['GPID 2', 'GPID 3', 'GPID 4', 'GPID 6', 'GPID 7']
+?                            ^           ----------
+
++ ['GPID 2', 'GPID 3', 'GPID 5', 'GPID 6']
+?                            ^
+
+]]></failure>
+		</testcase>
+	</testsuite>
+</testsuites>

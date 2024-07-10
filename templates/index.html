@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <title>GPIDs</title>
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}">
+      <table>
+        <thead "style:background-color:#498la3;">
+        </thead>
+      </table>
+  </head>
+  <body style="background-color: #cdcdcd">
+    <div style="border:#4981a3; border-width:7px; border-style:solid; border-radius:10px;">
+      <img
+        src="/static/bbgpd.jpg"
+        style="width: 150px; height: 105px; text-align:center"; 
+        alt="bbgpd-logo"
+      />
+    </div>
+    <br/>
+      <table>
+        <thead>
+          <tr>
+            <th>Index&ensp;</th>
+            <th>GPID&ensp;</th>
+            <th></th>
+            <th>GP-Name</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for gpid in gpids %}
+          <tr>
+            <td>{{ loop.index-1 }}</td>
+            <td>{{ gpid }}</td>
+            <td></td>
+            <td>{{ (gpnames[loop.index-1]) }}</td>
+            <td>
+              <a href="{{ url_for('remove', index=loop.index) }}">Remove</a>
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      <br />
+      <form method="POST" action="{{ url_for('add_gpid') }}">
+        <lable for="gpid">GPID: &thinsp;&thinsp;&thinsp;&emsp;&emsp;</lable>
+        <input type="text" name="gpid" />
+        <br />
+        <br />
+        <lable for="gpname">GP-Name: &thinsp;&thinsp;&ensp;</lable>
+        <input type="text" name="gpname" />
+        <input type="submit" value="GP hinzufügen" />
+      </form>
+      <br />
+      <a href="{{ url_for('download') }}">Herunterladen</a>
+  </body>
+</html>
