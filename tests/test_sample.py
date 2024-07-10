@@ -20,7 +20,7 @@ class IntegrationTest(unittest.TestCase):
                 'gpname': f'GPNAME {i}'
                 })
 
-        self.client.get('/remove/4') 
+        self.client.get('/remove/4/change') 
         self.client.get('/remove/1')
 
         response = self.client.get('/download_gpids')
