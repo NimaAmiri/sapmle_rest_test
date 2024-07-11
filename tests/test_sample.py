@@ -2,7 +2,7 @@ import io
 import unittest
 import xmlrunner
 import pandas as pd
-from main import app
+from app import app
 
 class IntegrationTest(unittest.TestCase):
     def setUp(self):
